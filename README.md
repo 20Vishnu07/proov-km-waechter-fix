@@ -1,46 +1,26 @@
-# The Legacy Fix — a ProoV Guided Project, powered by IBM Bob
+# KM-Wächter Fleet Maintenance Exercise
 
-This repo is the starting point of [The Legacy Fix](https://projectstudy.in/explore/experience-legacy-fix), a ProoV
-challenge. You are fixing **KM-Wächter**, the service that decides when each of Vossberg
-Mobility's 6,000 cars needs a service and prints the nightly fleet-health report. It has
-hidden bugs, several tests fail, and the code is written in an old style. Your job is to
-fix and modernize it — with IBM Bob (or another AI coding agent; another agent works just
-as well) doing the heavy lifting while you direct and audit it.
+This repository is a guided legacy-code exercise based on the fictional Vossberg Mobility fleet. The service decides when vehicles need maintenance and generates a nightly fleet-health report.
 
-> **Fictional company disclaimer.** Vossberg Mobility and KM-Wächter are invented for
-> teaching and are labelled as such in-app. They are not a real company. Industry figures
-> referenced in the accompanying brief come from public sources.
+## What is included
 
-## How to run
+- Maintenance decision logic in `km_wachter.py`
+- Fleet reporting in `fleet_report.py`
+- Configuration and helper modules from an older Python codebase
+- CSV-backed breakdown-risk analysis in `analyze.py`
+- Tests for maintenance decisions and reports
+- `verify.py`, an acceptance check for the complete exercise
 
-You do not need Python installed to do this task — your AI agent can run all of this for
-you. If you do want to run it yourself, you need `python3`:
+## Run locally
 
-```
-pip install pytest pandas
-pytest          # the test suite (currently red)
-python verify.py  # your acceptance check: is the job actually done?
+```bash
+python -m pip install pytest pandas
+pytest
+python verify.py
 ```
 
-The test suite is **red on purpose** — that is the starting point of the task, not a bug in
-this template.
+Read `TASK.md` before changing the code. The exercise deliberately preserves fixed business rules, including the 15,000 km service interval and the 80 percent wear threshold. `NOTES.md` records validation findings and lessons from the modernization.
 
-## What's in this repo
+## Scope
 
-- **`TASK.md`** — your mission brief. Read this first; it has every step of the task,
-  what NOT to change, and how to hand the work back in.
-- **`verify.py`** — your own acceptance check. It does not grade you — it tells you,
-  mechanically, whether the job is actually done, so "finished" is something you checked
-  rather than something your AI agent told you. Run `python verify.py` before you hand in.
-- **`km_wachter.py` / `fleet_report.py`** — the two core modules with the hidden bugs.
-- **`config_loader.py` / `fleet_utils.py` / `log_util.py`** — 2013-era helper modules: dated
-  style, dead code, and at least one more quiet problem no test catches.
-- **`settings.cfg`** — the maintenance rules, read at runtime. The values must not change.
-- **`test_km_wachter.py` / `test_fleet_report.py`** — the test suite (currently red).
-- **`analyze.py`** — the "make it smarter" capstone: a data-driven breakdown-risk analysis.
-- **`fleet_history.csv`** — 120 labelled cars for the analysis step.
-- **`NOTES.md`** — write this yourself: what your AI agent got wrong that you caught.
-
----
-
-This challenge is part of the ProoV project "The Legacy Fix" — https://projectstudy.in/explore/experience-legacy-fix
+This is an educational project. Vossberg Mobility and KM-Wächter are fictional and do not represent a production fleet-management service.
