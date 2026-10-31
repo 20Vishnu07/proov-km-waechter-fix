@@ -1,3 +1,5 @@
+![Python](https://img.shields.io/badge/Python-maintenance%20exercise-3776AB?logo=python&logoColor=white)
+
 # KM-Wächter Fleet Maintenance Exercise
 
 This repository is a guided legacy-code exercise based on the fictional Vossberg Mobility fleet. The service decides when vehicles need maintenance and generates a nightly fleet-health report.
